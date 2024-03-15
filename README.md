@@ -494,7 +494,7 @@ KaisekiRyori
 
 
 
-getCityFoodMap
+#### getCityFoodMap
 
 `Person` 型のオブジェクトのリストを引数として受け取り、各都市出身者の好きな食べ物をMapとして返します。
 

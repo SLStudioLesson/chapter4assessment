@@ -206,7 +206,7 @@ Chiara, 32 years old
 
 #### loadPeopleData
 
-`peopleData.csv` のデータを `People` オブジェクトにマッピングして `peopleList` に追加し、リストを返すように実装してください。
+`peopleData.csv` のデータを `Person` オブジェクトにマッピングして `peopleList` に追加し、リストを返すように実装してください。
 
 ファイルパスは定義済のフィールド`FILE_PATH`を利用してください。
 

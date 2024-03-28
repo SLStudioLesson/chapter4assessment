@@ -123,7 +123,7 @@ Sophia,32,Canada,Toronto,Poutine,Glasses,Book,Glasses
 
 
 
-## 設問1: 
+## 設問1:
 
 ### 目安時間
 
@@ -137,28 +137,61 @@ Sophia,32,Canada,Toronto,Poutine,Glasses,Book,Glasses
 
 #### クラスの定義
 
-以下のデータモデリングされたCSVをマッピングするのに最適なクラスを、要件に従って定義してください。
-
-```
-Name,Age,Country,City,Food,Item1,Item2,Item3
-Kiyoshi,60,Japan,Tokyo,Sushi,Phone,Key,Wallet
-```
+peopleData.csvのデータをマッピングするためのクラス・フィールド・コンストラクタ・アクセサを、以下要件に従って実装してください。
 
 【要件】
+**クラス**
+`model`パッケージを新たに作成し、その中に`Person`クラスを実装すること
 
-- クラス名は `Person` とします。（`model`パッケージに作成）
-- カラム「Item1」、「Item2」、「Item3」、はコレクションとして一つのフィールドで扱ってください。
-- クラス内にはフィールドの他に、インスタンス生成時にフィールドを初期化するためのコンストラクタと各フィールドのアクセサを定義してください。
+**フィールド**
+以下の仕様でフィールドを実装すること
 
-各フィールドの詳細は以下の通りです。
+| アクセス修飾子 | フィールド名 | 型 | peopleDate.csvで対応するカラム |
+| --- | --- | --- | --- |
+| private | name | 文字列 | Name（名前） |
+| private | age | 整数 | Age（年齢） |
+| private | country | 文字列 | Country（国籍） |
+| private | city | 文字列 | City（出身都市） |
+| private | food | 文字列 | Food（好きな食べ物） |
+| private | items | 文字列のリスト | Item1、Item2、Item3（所持品1,2,3） |
 
-- Name : 文字列型、名前を表す。
-- Age : 整数型、年齢を表す。
-- Country : 文字列型、国籍を表す。
-- City : 文字列型、出身都市を表す。
-- Food : 文字列型、好きな食べ物を表す
-- Item1、Item2、Item3 : 文字列型、所持品を表す。一行のデータに対しそれぞれの各フィールドに重複する値が入る可能性がある。
+**コンストラクタ**
+各フィールドを初期化するために、以下6つの引数を受け取れる1つのコンストラクタを実装する
 
+| 引数の型・名前 | 説明 |
+| --- | --- |
+| 文字列・name | nameフィールドに代入する |
+| 整数・age | ageフィールドに代入する |
+| 文字列・country | countryフィールドに代入する |
+| 文字列・city | cityフィールドに代入する |
+| 文字列・food | foodフィールドに代入する |
+| 文字列のリスト・items | itemsフィールドに代入する |
+
+※引数の順番はname・age・country・city・food・itemsの順とする
+
+**アクセサ（getter）**
+以下の仕様に沿って、各フィールドに対応するgetterを実装する
+
+| メソッド名 | 返り値の型 | 処理内容 |
+| --- | --- | --- |
+| getName | 文字列 | nameフィールドを返却する |
+| getAge | 整数列 | ageフィールドを返却する |
+| getCountry | 文字列 | countryフィールドを返却する |
+| getCity | 文字列 | cityフィールドを返却する |
+| getFood | 文字列 | foodフィールドを返却する |
+| getItems | 文字列のリスト | itemsフィールドを返却する |
+
+**アクセサ（setter）**
+以下の仕様に沿って、各フィールドに対応するsetterを実装する
+
+| メソッド名 | 引数の型・名前 | 返り値の型 | 処理内容 |
+| --- | --- | --- | --- |
+| setName | 文字列・name | なし | nameフィールドに代入する |
+| setAge | 整数・age | なし | ageフィールドに代入する |
+| setCountry | 文字列・country | なし | countryフィールドに代入する |
+| setCity | 文字列・city | なし | cityフィールドに代入する |
+| setFood | 文字列・food | なし | foodフィールドに代入する |
+| setItems | 文字列のリスト・items | なし | itemsフィールドに代入する |
 
 
 #### 処理の実装
